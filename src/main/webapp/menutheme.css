@@ -1,0 +1,370 @@
+
+/* =========================================================
+   TOMATO MENU — DARK / LIGHT THEME
+   Separate theme stylesheet.
+   Keeps the original menu-book layout and animations.
+========================================================= */
+
+html {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* ---------------------------------------------------------
+   DARK PAGE BACKGROUND
+--------------------------------------------------------- */
+
+html[data-theme="dark"] body {
+    background: #171514;
+    color: #f7eee7;
+}
+
+html[data-theme="dark"] .menu-container {
+    background:
+        radial-gradient(
+            circle at 12% 30%,
+            rgba(150, 65, 38, 0.16),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 90% 65%,
+            rgba(66, 117, 59, 0.13),
+            transparent 23%
+        ),
+        #191716;
+    color: #f7eee7;
+}
+
+/* ---------------------------------------------------------
+   MENU HEADING
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .menu-heading h2 {
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .menu-heading h2 span,
+html[data-theme="dark"] .section-small {
+    color: #ff7168;
+}
+
+html[data-theme="dark"] .menu-heading p {
+    color: #c0b1a8;
+}
+
+/* ---------------------------------------------------------
+   MENU BOOK OUTER SHELL
+   Preserve the existing book shape and dimensions.
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .book-wrapper {
+    filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.28));
+}
+
+html[data-theme="dark"] .book-scroll-area {
+    background: #35271f;
+    border-left-color: #8e5a35;
+    border-right-color: #8e5a35;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.35),
+        0 5px 0 #674126;
+}
+
+html[data-theme="dark"] .book-scroll-area::-webkit-scrollbar-track {
+    background: #3c2c22;
+}
+
+html[data-theme="dark"] .book-scroll-area::-webkit-scrollbar-thumb {
+    background: #a86c43;
+    border-color: #3c2c22;
+}
+
+html[data-theme="dark"] .book-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #c98451;
+}
+
+/* ---------------------------------------------------------
+   OPEN BOOK PAGES
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .open-book {
+    background: linear-gradient(
+        90deg,
+        #29211c 0%,
+        #302721 4%,
+        #27221e 48%,
+        #493528 50%,
+        #27221e 52%,
+        #302721 96%,
+        #29211c 100%
+    );
+}
+
+html[data-theme="dark"] .menu-spread {
+    background: linear-gradient(
+        90deg,
+        #302721 0%,
+        #29231f 47%,
+        #493528 50%,
+        #29231f 53%,
+        #302721 100%
+    );
+    border-bottom-color: #554031;
+}
+
+html[data-theme="dark"] .book-page {
+    color: #f7eee7;
+}
+
+html[data-theme="dark"] .left-page {
+    border-right-color: rgba(224, 177, 130, 0.13);
+}
+
+html[data-theme="dark"] .right-page {
+    border-left-color: rgba(224, 177, 130, 0.10);
+}
+
+html[data-theme="dark"] .spine-line {
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(231, 187, 139, 0.40),
+        transparent
+    );
+}
+
+/* ---------------------------------------------------------
+   DISH DETAILS
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .dish-info {
+    color: #f7eee7;
+}
+
+html[data-theme="dark"] .dish-info h3 {
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .dish-description {
+    color: #c8b9af;
+}
+
+html[data-theme="dark"] .dish-meta {
+    color: #e7d8cd;
+}
+
+html[data-theme="dark"] .price {
+    color: #ff8075;
+}
+
+html[data-theme="dark"] .image-caption {
+    color: #e1cbb8;
+}
+
+/* Preserve the original food photographs. */
+html[data-theme="dark"] .dish-image-frame {
+    background: #241e1a;
+    border-color: #72523c;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
+html[data-theme="dark"] .dish-image {
+    filter: brightness(0.96) saturate(1.04);
+}
+
+/* ---------------------------------------------------------
+   MENU AVAILABILITY
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .availability,
+html[data-theme="dark"] .available,
+html[data-theme="dark"] .available-label {
+    color: #8fe0a1;
+}
+
+/* ---------------------------------------------------------
+   ADD TO CART AND QUANTITY CONTROLS
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .cart-control-wrapper {
+    color: #f7eee7;
+}
+
+html[data-theme="dark"] .quantity-control {
+    background: #382923;
+    border-color: #654536;
+}
+
+html[data-theme="dark"] .quantity-value {
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .quantity-btn {
+    background: #473026;
+    color: #ff9589;
+    border-color: #654536;
+}
+
+html[data-theme="dark"] .quantity-btn:hover {
+    background: #e52b2b;
+    color: #ffffff;
+    border-color: #e52b2b;
+}
+
+html[data-theme="dark"] .add-btn {
+    background: #e52b2b;
+    color: #ffffff;
+    border-color: #e52b2b;
+    box-shadow: 0 6px 16px rgba(229, 43, 43, 0.18);
+}
+
+html[data-theme="dark"] .add-btn:hover {
+    background: #ff4840;
+    border-color: #ff4840;
+}
+
+html[data-theme="dark"] .disabled-btn,
+html[data-theme="dark"] .add-btn:disabled,
+html[data-theme="dark"] .quantity-btn:disabled {
+    background: #39312c;
+    color: #a89a90;
+    border-color: #4d423b;
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   EMPTY MENU STATE
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .empty-menu {
+    background: #29231f;
+    border-color: #4a3930;
+    color: #f7eee7;
+}
+
+html[data-theme="dark"] .empty-menu h3 {
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .empty-menu p {
+    color: #c8b9af;
+}
+
+/* ---------------------------------------------------------
+   BOOK FOOTER
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .book-bottom {
+    background: #2a211c;
+    color: #e9d4c2;
+    border-top-color: #57402f;
+}
+
+html[data-theme="dark"] .book-bottom span {
+    background: #8d6041;
+}
+
+/* ---------------------------------------------------------
+   BOTTOM PROMOTIONAL MESSAGE
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .bottom-message {
+    background: #211d1a;
+    color: #fff5ed;
+    border-top-color: #39302a;
+}
+
+html[data-theme="dark"] .bottom-message h2 {
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .bottom-message p {
+    color: #c8b9af;
+}
+
+/* ---------------------------------------------------------
+   SEARCH INPUT
+   Shared navbar theme remains controlled by navbar.jsp.
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .search-box {
+    background: #292522;
+    border-color: #49403a;
+}
+
+html[data-theme="dark"] .search-box input {
+    background: transparent;
+    color: #fff5ed;
+}
+
+html[data-theme="dark"] .search-box input::placeholder {
+    color: #b6a69b;
+}
+
+html[data-theme="dark"] .nav-location select {
+    background-color: #292522;
+    color: #fff5ed;
+    border-color: #49403a;
+}
+
+/* ---------------------------------------------------------
+   CART FEEDBACK MESSAGE
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .menu-cart-message {
+    background: #30251f;
+    color: #fff5ed;
+    border: 1px solid #594234;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------------
+   KEYBOARD ACCESSIBILITY
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .add-btn:focus-visible,
+html[data-theme="dark"] .quantity-btn:focus-visible,
+html[data-theme="dark"] .search-box input:focus-visible {
+    outline: 3px solid rgba(255, 113, 104, 0.75);
+    outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------
+   TRANSITIONS — COLORS ONLY
+   Existing menu animations are preserved.
+--------------------------------------------------------- */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .menu-container,
+html[data-theme="dark"] .menu-heading h2,
+html[data-theme="dark"] .menu-heading p,
+html[data-theme="dark"] .book-scroll-area,
+html[data-theme="dark"] .open-book,
+html[data-theme="dark"] .menu-spread,
+html[data-theme="dark"] .book-page,
+html[data-theme="dark"] .dish-info h3,
+html[data-theme="dark"] .dish-description,
+html[data-theme="dark"] .quantity-control,
+html[data-theme="dark"] .quantity-btn,
+html[data-theme="dark"] .quantity-value,
+html[data-theme="dark"] .empty-menu,
+html[data-theme="dark"] .bottom-message {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ---------------------------------------------------------
+   LIGHT MODE
+   The existing menu.css supplies your original light design.
+   This block intentionally does not redesign it.
+--------------------------------------------------------- */
+
+html[data-theme="light"] body {
+    color-scheme: light;
+}

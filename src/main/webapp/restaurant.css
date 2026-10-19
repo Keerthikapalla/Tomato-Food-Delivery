@@ -1,0 +1,2048 @@
+
+/* =========================================================
+   TOMATO RESTAURANT PAGE
+   Premium red, green and cream theme
+========================================================= */
+
+:root {
+    --tomato: #e52b2b;
+    --tomato-dark: #c91f1f;
+    --tomato-soft: #fff0eb;
+    --green: #438b35;
+    --cream: #fffaf2;
+    --ink: #2b1b17;
+    --muted: #77716c;
+    --line: #efe4dc;
+    --page-width: 1320px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #fffdf9;
+    color: var(--ink);
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 78px;
+    padding: 14px max(5%, calc((100% - var(--page-width)) / 2));
+    border-bottom: 1px solid rgba(80, 45, 30, 0.07);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 24px rgba(45, 30, 20, 0.035);
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    color: var(--tomato);
+    font-size: 23px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.tomato-logo {
+    display: inline-block;
+    font-size: 28px;
+    transition: transform 0.25s ease;
+}
+
+.logo:hover .tomato-logo {
+    transform: rotate(-12deg) scale(1.08);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: clamp(12px, 1.5vw, 22px);
+    margin-left: auto;
+}
+
+.nav-links > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #494541;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.nav-links > a:hover {
+    color: var(--tomato);
+}
+
+#cartCount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--tomato);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.profile-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41px;
+    height: 41px;
+    border: 1px solid #ffe0d7;
+    border-radius: 50%;
+    background: var(--tomato-soft);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 20;
+    width: 190px;
+    padding: 8px;
+    border: 1px solid #f2e6df;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 15px 38px rgba(69, 42, 28, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease,
+                visibility 0.2s ease;
+}
+
+.profile-container:hover .profile-dropdown,
+.profile-container:focus-within .profile-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #494541;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.profile-dropdown a:hover {
+    background: var(--tomato-soft);
+    color: var(--tomato);
+}
+
+.profile-dropdown .logout {
+    margin-top: 5px;
+    border-top: 1px solid var(--line);
+    color: var(--tomato);
+}
+
+.login-nav-link {
+    padding: 10px 19px;
+    border-radius: 999px;
+    background: var(--tomato);
+    color: #fff !important;
+    box-shadow: 0 6px 15px rgba(229, 43, 43, 0.16);
+}
+
+.login-nav-link:hover {
+    background: var(--tomato-dark);
+}
+
+
+/* ================= HERO — FOOD BACKGROUND ================= */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 440px;
+    padding: 65px max(7%, calc((100% - 1200px) / 2));
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 250, 244, 0.97) 0%,
+            rgba(255, 250, 244, 0.88) 45%,
+            rgba(255, 250, 244, 0.48) 100%
+        ),
+        url("https://images.pexels.com/photos/3756479/pexels-photo-3756479.jpeg")
+        center / cover no-repeat;
+
+    animation: heroBackgroundMove 18s ease-in-out infinite alternate;
+}
+
+/* Decorative accents */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(52vw, 660px);
+    height: min(52vw, 660px);
+    right: -12%;
+    top: -38%;
+    border: 1px solid rgba(67, 139, 53, 0.14);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 34px rgba(67, 139, 53, 0.035),
+        0 0 0 70px rgba(229, 43, 43, 0.035);
+    pointer-events: none;
+}
+
+/* Keep hero content above the background */
+
+.hero-left,
+.hero-copy,
+.hero-visual,
+.hero-scroll {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left {
+    width: 100%;
+    max-width: 760px;
+    animation: heroRise 0.7s ease both;
+}
+
+.small-label,
+.section-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--tomato);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.small-label {
+    margin-bottom: 18px;
+    padding: 9px 13px;
+    border: 1px solid rgba(229, 43, 43, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+    max-width: 720px;
+    color: var(--ink);
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--tomato);
+}
+
+.hero p {
+    max-width: 550px;
+    margin-top: 20px;
+    color: #716a64;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+
+/* ================= PREMIUM SEARCH BAR ================= */
+
+.hero-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    max-width: 540px;
+    height: 62px;
+    margin-top: 26px;
+    padding: 0 12px 0 20px;
+    border: 1px solid #eee2d9;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(53, 34, 24, 0.06),
+                0 2px 5px rgba(53, 34, 24, 0.025);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-search:hover {
+    border-color: #e9c9bd;
+    box-shadow: 0 12px 28px rgba(53, 34, 24, 0.09);
+}
+
+.hero-search:focus-within {
+    border-color: var(--tomato);
+    box-shadow: 0 0 0 4px rgba(229, 43, 43, 0.08),
+                0 12px 28px rgba(53, 34, 24, 0.08);
+}
+
+.hero-search .search-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    color: var(--tomato);
+    font-family: Arial, sans-serif;
+    font-size: 31px;
+    line-height: 1;
+}
+
+.hero-search input[type="search"] {
+    display: block;
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #29221e;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.hero-search input[type="search"]::placeholder {
+    color: #a29a94;
+    opacity: 1;
+}
+
+.hero-search input[type="search"]::-webkit-search-decoration,
+.hero-search input[type="search"]::-webkit-search-cancel-button,
+.hero-search input[type="search"]::-webkit-search-results-button,
+.hero-search input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.hero-search .clear-search {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 11px;
+    background: #fff0eb;
+    color: #d92b2b;
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-search .clear-search:hover {
+    background: #ffe0d7;
+    transform: scale(1.05);
+}
+
+.hero-search .clear-search[hidden] {
+    display: none !important;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.hero-tags span {
+    padding: 8px 12px;
+    border: 1px solid rgba(239, 228, 220, 0.9);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #5f5953;
+    font-size: 10px;
+    font-weight: 500;
+    transition: border-color 0.2s ease, color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.hero-tags span:hover {
+    transform: translateY(-2px);
+    border-color: #f1b9ad;
+    color: var(--tomato);
+}
+
+
+/* ================= RESTAURANT SECTION ================= */
+
+.restaurants-section {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 76px max(7%, calc((100% - 1200px) / 2)) 88px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.section-small {
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 3.4vw, 43px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span {
+    color: var(--tomato);
+}
+
+.section-heading p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ================= FILTERS ================= */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0 28px;
+}
+
+.filter {
+    min-height: 40px;
+    padding: 10px 17px;
+    border: 1px solid #eee3dc;
+    border-radius: 999px;
+    background: #fff;
+    color: #655e58;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.filter:hover {
+    transform: translateY(-2px);
+    border-color: #f0b9ae;
+    color: var(--tomato);
+}
+
+.filter.active {
+    border-color: var(--tomato);
+    background: var(--tomato);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(229, 43, 43, 0.19);
+}
+
+
+/* ================= RESTAURANT CARDS ================= */
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.restaurant-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(239, 228, 220, 0.95);
+    border-radius: 23px;
+    background: #fff;
+    box-shadow: 0 8px 26px rgba(69, 42, 28, 0.045);
+    animation: cardAppear 0.45s ease both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    border-color: #f0d8ce;
+    box-shadow: 0 22px 48px rgba(69, 42, 28, 0.13);
+}
+
+.restaurant-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #f7eee7;
+}
+
+.restaurant-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s ease, filter 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-image img {
+    transform: scale(1.07);
+    filter: saturate(1.06);
+}
+
+.rating {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2f6f28;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-info {
+    padding: 18px 19px 20px;
+}
+
+.restaurant-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.restaurant-title-row h3 {
+    min-width: 0;
+    color: #282521;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.tomato-menu-btn {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.tomato-menu-btn:hover {
+    transform: scale(1.08) rotate(-3deg);
+    filter: drop-shadow(0 5px 8px rgba(229, 43, 43, 0.25));
+}
+
+.tomato-menu-btn:active {
+    transform: scale(0.94);
+}
+
+.tomato-menu-svg {
+    display: block;
+    width: 62px;
+    height: 57px;
+    overflow: visible;
+}
+
+.cuisine {
+    margin-top: 3px;
+    color: #77716b;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.restaurant-details {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 15px;
+    padding-top: 13px;
+    border-top: 1px solid #f1e9e3;
+    color: #716a64;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.restaurant-details span {
+    overflow-wrap: anywhere;
+}
+
+
+/* ================= EMPTY / NO RESULTS ================= */
+
+.empty-message,
+.no-results {
+    grid-column: 1 / -1;
+    padding: 48px 20px;
+    border: 1px dashed #e8d7cb;
+    border-radius: 22px;
+    background: #fffaf5;
+    text-align: center;
+}
+
+.empty-message > div,
+.no-results > div {
+    margin-bottom: 12px;
+    font-size: 45px;
+}
+
+.empty-message h3,
+.no-results h3 {
+    color: #302b28;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.empty-message p,
+.no-results p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.reset-filters {
+    margin-top: 18px;
+    padding: 10px 17px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--tomato);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reset-filters:hover {
+    transform: translateY(-2px);
+    background: var(--tomato-dark);
+}
+
+
+/* ================= TOMATO ROPE ================= */
+
+.tomato-rope-track {
+    position: fixed;
+    top: 82px;
+    right: 25px;
+    z-index: 500;
+    width: 52px;
+    height: 210px;
+    pointer-events: auto;
+}
+
+.hanging-rope {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 2px;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(#b9a18b, #ddc8b0);
+    transform-origin: top center;
+    animation: ropeSwing 3s ease-in-out infinite;
+}
+
+.rope-tomato {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    z-index: 2;
+    font-size: 34px;
+    line-height: 1;
+    filter: drop-shadow(0 5px 5px rgba(180, 40, 30, 0.2));
+    animation: tomatoClimb 6s ease-in-out infinite;
+}
+
+.rope-tomato-message {
+    position: absolute;
+    top: 5px;
+    right: 43px;
+    width: 135px;
+    padding: 9px 12px;
+    border: 1px solid #f1ded4;
+    border-radius: 13px 13px 3px 13px;
+    background: #fff;
+    color: #514940;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 15px 38px rgba(69, 42, 28, 0.12);
+    opacity: 0;
+    transform: translateX(7px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tomato-rope-track:hover .rope-tomato-message {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ================= BOTTOM MESSAGE ================= */
+
+.bottom-message {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 20px 75px;
+    background: linear-gradient(
+        125deg,
+        #fff5ef 0%,
+        #fffdf8 60%,
+        #f0f7eb 100%
+    );
+    text-align: center;
+}
+
+.bottom-message::before,
+.bottom-message::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgba(67, 139, 53, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.bottom-message::before {
+    left: -110px;
+    top: -100px;
+}
+
+.bottom-message::after {
+    right: -110px;
+    bottom: -130px;
+}
+
+.bottom-tomato {
+    margin-bottom: 13px;
+    font-size: 38px;
+    animation: tomatoFloat 3s ease-in-out infinite;
+}
+
+.bottom-message h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+.bottom-message p {
+    position: relative;
+    z-index: 1;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 34px 20px;
+    background: #282622;
+    color: #fffaf5;
+    text-align: center;
+}
+
+.footer-logo {
+    color: #ff6a5f;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin-top: 9px;
+    color: #c7beb6;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: #e9e0d9;
+    font-size: 10px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ff786d;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroRise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroBackgroundMove {
+    from {
+        background-position: 45% center;
+    }
+    to {
+        background-position: 55% center;
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tomatoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes ropeSwing {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+@keyframes tomatoClimb {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(145px) rotate(5deg); }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1150px) {
+    .navbar {
+        gap: 15px;
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links > a {
+        font-size: 11px;
+    }
+
+    .hero,
+    .restaurants-section {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .restaurant-grid {
+        gap: 18px;
+    }
+
+    .restaurant-image {
+        height: 215px;
+    }
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 14px 4%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 7vw, 57px);
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .restaurant-image {
+        height: 225px;
+    }
+
+    .tomato-rope-track {
+        right: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        align-items: flex-start;
+        padding: 13px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .tomato-logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 10px 14px;
+        margin-left: 0;
+    }
+
+    .nav-links > a {
+        font-size: 10px;
+    }
+
+    .profile-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .hero {
+        min-height: 390px;
+        padding: 43px 5% 48px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 9vw, 45px);
+        letter-spacing: -1.4px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-search {
+        height: 56px;
+        gap: 9px;
+        margin-top: 22px;
+        padding-left: 14px;
+        border-radius: 14px;
+    }
+
+    .hero-search input[type="search"] {
+        font-size: 11px;
+    }
+
+    .hero-search .search-icon {
+        width: 24px;
+        font-size: 28px;
+    }
+
+    .hero-search .clear-search {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-tags {
+        gap: 7px;
+    }
+
+    .hero-tags span {
+        padding: 7px 10px;
+        font-size: 9px;
+    }
+
+    .restaurants-section {
+        padding: 50px 5% 58px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .filters {
+        gap: 7px;
+        margin: 23px 0 21px;
+    }
+
+    .filter {
+        padding: 8px 12px;
+        font-size: 9px;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .restaurant-image {
+        height: 225px;
+    }
+
+    .restaurant-info {
+        padding: 15px 16px 16px;
+    }
+
+    .tomato-rope-track {
+        display: none;
+    }
+
+    .bottom-message {
+        padding: 53px 18px 56px;
+    }
+
+    .bottom-message h2 {
+        font-size: 22px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links > a {
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: 33px;
+    }
+
+    .restaurant-image {
+        height: 195px;
+    }
+
+    .tomato-menu-svg {
+        width: 54px;
+        height: 50px;
+    }
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero {
+        animation: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   TOMATO — BRIGHT FOOD HERO + ANIMATED TOMATO ROPE MASCOT
+   Add this section at the VERY END of restaurant.css
+========================================================= */
+
+/* ---------------- BRIGHT FOOD BACKGROUND ---------------- */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 250, 244, 0.46) 0%,
+            rgba(255, 250, 244, 0.23) 48%,
+            rgba(255, 250, 244, 0.08) 100%
+        ),
+        url("https://images.pexels.com/photos/3756479/pexels-photo-3756479.jpeg")
+        center center / cover no-repeat;
+
+    animation: tomatoHeroDrift 22s ease-in-out infinite alternate;
+}
+
+/* Keep existing hero text and illustration above the image */
+.hero-left,
+.hero-tomato-area {
+    position: relative;
+    z-index: 2;
+}
+
+/* Light text backdrop for readability */
+.hero-left {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.16);
+}
+
+.hero h1,
+.hero h1 span {
+    text-shadow: 0 2px 16px rgba(255, 250, 244, 0.20);
+}
+
+@keyframes tomatoHeroDrift {
+    from {
+        background-position: 45% center;
+    }
+
+    to {
+        background-position: 55% center;
+    }
+}
+
+/* ---------------- LONG, THICK ROPE ---------------- */
+
+.tomato-rope-track {
+    position: fixed;
+    top: 82px;
+    right: 12px;
+    bottom: 0;
+    z-index: 1100;
+
+    width: 76px;
+    overflow: visible;
+    pointer-events: none;
+}
+
+/* Thick, textured rope with a darker edge */
+.hanging-rope {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 35px;
+
+    width: 7px;
+    border: 1px solid rgba(104, 59, 25, 0.40);
+    border-radius: 999px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #b67a42 0px,
+            #b67a42 3px,
+            #e2b77c 3px,
+            #e2b77c 6px,
+            #8c592e 6px,
+            #8c592e 8px
+        );
+
+    box-shadow:
+        2px 0 3px rgba(60, 32, 12, 0.18),
+        inset 1px 0 1px rgba(255, 240, 204, 0.65);
+}
+
+/* ---------------- TOMATO CHARACTER ---------------- */
+
+.rope-tomato {
+    position: absolute;
+    top: 0;
+    left: 5px;
+
+    width: 70px;
+    height: 100px;
+
+    font-size: initial;
+    line-height: normal;
+    filter: drop-shadow(0 5px 5px rgba(60, 30, 10, 0.16));
+
+    transition: top 0.12s linear;
+    will-change: top;
+}
+
+/* Character wrapper */
+.tomato-character {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+
+    width: 58px;
+    height: 78px;
+
+    transform-origin: center center;
+    animation: tomatoCharacterBob 1.4s ease-in-out infinite;
+}
+
+/* Tomato body */
+.tomato-body {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    z-index: 2;
+
+    display: block;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    font-size: 43px;
+    line-height: 1;
+
+    filter: drop-shadow(0 3px 2px rgba(120, 20, 15, 0.12));
+}
+
+/* Little green leaf accent */
+.tomato-leaf {
+    position: absolute;
+    top: 4px;
+    left: 23px;
+    z-index: 4;
+
+    color: #32852c;
+    font-size: 16px;
+    font-weight: 900;
+
+    transform: rotate(-25deg);
+}
+
+/* Eyes */
+.tomato-eye {
+    position: absolute;
+    top: 29px;
+    z-index: 5;
+
+    width: 5px;
+    height: 7px;
+    border-radius: 50%;
+
+    background: #38201c;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
+
+    animation: tomatoBlink 4s infinite;
+}
+
+.tomato-eye-left {
+    left: 23px;
+}
+
+.tomato-eye-right {
+    left: 35px;
+}
+
+/* Happy curved smile */
+.tomato-smile {
+    position: absolute;
+    top: 39px;
+    left: 25px;
+    z-index: 5;
+
+    width: 12px;
+    height: 7px;
+
+    border-bottom: 2px solid #61231e;
+    border-radius: 0 0 50% 50%;
+}
+
+/* Arms */
+.tomato-arm {
+    position: absolute;
+    top: 36px;
+    z-index: 1;
+
+    width: 15px;
+    height: 5px;
+
+    border: 1px solid #a92520;
+    border-radius: 999px;
+    background: #ed3c32;
+
+    transform-origin: center;
+}
+
+.tomato-arm-left {
+    left: -1px;
+    transform: rotate(-38deg);
+    animation: tomatoWaveLeft 0.75s ease-in-out infinite alternate;
+}
+
+.tomato-arm-right {
+    right: -1px;
+    transform: rotate(38deg);
+    animation: tomatoWaveRight 0.75s ease-in-out infinite alternate;
+}
+
+/* Tiny hands */
+.tomato-arm::after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+
+    width: 7px;
+    height: 7px;
+
+    border: 1px solid #e2a078;
+    border-radius: 50%;
+    background: #ffd0a8;
+
+    content: "";
+}
+
+/* Legs */
+.tomato-leg {
+    position: absolute;
+    top: 53px;
+    z-index: 1;
+
+    width: 5px;
+    height: 15px;
+
+    border-radius: 999px;
+    background: #49312b;
+
+    transform-origin: top center;
+}
+
+.tomato-leg-left {
+    left: 22px;
+    transform: rotate(17deg);
+    animation: tomatoWalkLeft 0.35s ease-in-out infinite alternate;
+}
+
+.tomato-leg-right {
+    left: 35px;
+    transform: rotate(-17deg);
+    animation: tomatoWalkRight 0.35s ease-in-out infinite alternate;
+}
+
+/* Little shoes */
+.tomato-shoe {
+    position: absolute;
+    top: 65px;
+    z-index: 3;
+
+    width: 11px;
+    height: 6px;
+
+    border-radius: 50% 50% 45% 45%;
+    background: #49312b;
+}
+
+.tomato-shoe-left {
+    left: 14px;
+    transform: rotate(-16deg);
+}
+
+.tomato-shoe-right {
+    left: 35px;
+    transform: rotate(16deg);
+}
+
+/* ---------------- ROPE MESSAGE ---------------- */
+
+.rope-tomato-message {
+    position: absolute;
+    top: 19px;
+    right: 66px;
+
+    width: max-content;
+    max-width: 190px;
+    padding: 9px 12px;
+
+    border: 1px solid #f0ded3;
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.97);
+    color: #41362f;
+
+    box-shadow: 0 8px 22px rgba(48, 28, 15, 0.12);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: normal;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(7px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.rope-tomato:hover .rope-tomato-message {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Wiggle when the user scrolls */
+.rope-tomato.climbing .tomato-character {
+    animation: tomatoClimbWiggle 0.28s ease-in-out;
+}
+
+/* ---------------- MASCOT ANIMATIONS ---------------- */
+
+@keyframes tomatoCharacterBob {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(2deg);
+    }
+}
+
+@keyframes tomatoWaveLeft {
+    from { transform: rotate(-38deg); }
+    to   { transform: rotate(-68deg); }
+}
+
+@keyframes tomatoWaveRight {
+    from { transform: rotate(38deg); }
+    to   { transform: rotate(68deg); }
+}
+
+@keyframes tomatoWalkLeft {
+    from { transform: rotate(17deg); }
+    to   { transform: rotate(-19deg); }
+}
+
+@keyframes tomatoWalkRight {
+    from { transform: rotate(-17deg); }
+    to   { transform: rotate(19deg); }
+}
+
+@keyframes tomatoClimbWiggle {
+    0%, 100% { transform: rotate(0) translateY(0); }
+    25%      { transform: rotate(-8deg) translateY(-2px); }
+    75%      { transform: rotate(8deg) translateY(-2px); }
+}
+
+@keyframes tomatoBlink {
+    0%, 45%, 49%, 100% {
+        transform: scaleY(1);
+    }
+
+    47% {
+        transform: scaleY(0.12);
+    }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Keep the rope visible on mobile too */
+@media (max-width: 680px) {
+    .tomato-rope-track {
+        top: 78px;
+        right: 1px;
+        bottom: 0;
+        width: 59px;
+    }
+
+    .hanging-rope {
+        left: 28px;
+        width: 5px;
+    }
+
+    .rope-tomato {
+        left: 0;
+        transform: scale(0.84);
+        transform-origin: top left;
+    }
+
+    .rope-tomato-message {
+        right: 53px;
+        max-width: 155px;
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero,
+    .tomato-character,
+    .tomato-arm,
+    .tomato-leg,
+    .tomato-eye {
+        animation: none !important;
+    }
+}
+
+
+
+
+/* =========================================================
+   TOMATO — RESTAURANT PAGE THEME SUPPORT
+   Preserves the existing layout, cards and animations.
+========================================================= */
+
+/* ---------- LIGHT THEME ---------- */
+html[data-theme="light"] {
+    color-scheme: light;
+
+    --page-bg: #fffdf9;
+    --surface: #ffffff;
+    --surface-soft: #fffaf2;
+    --text-primary: #2b1b17;
+    --text-secondary: #77716c;
+    --border-color: #efe4dc;
+    --input-bg: #ffffff;
+    --input-text: #29221e;
+    --hover-bg: #fff0eb;
+    --navbar-bg: rgba(255, 255, 255, 0.96);
+    --card-shadow: 0 10px 30px rgba(45, 30, 20, 0.07);
+}
+
+/* ---------- DARK THEME ---------- */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --tomato: #ff5b55;
+    --tomato-dark: #e9413b;
+    --tomato-soft: #382321;
+    --green: #78bd68;
+    --cream: #181817;
+    --ink: #f5eee8;
+    --muted: #b6aaa1;
+    --line: #39312d;
+
+    --page-bg: #141414;
+    --surface: #20201f;
+    --surface-soft: #282523;
+    --text-primary: #f5eee8;
+    --text-secondary: #b6aaa1;
+    --border-color: #39312d;
+    --input-bg: #252321;
+    --input-text: #f5eee8;
+    --hover-bg: #382321;
+    --navbar-bg: rgba(25, 25, 24, 0.96);
+    --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- PAGE BACKGROUND AND TEXT ---------- */
+html[data-theme="light"] body,
+html[data-theme="dark"] body {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html[data-theme="dark"] .restaurants-section,
+html[data-theme="dark"] main,
+html[data-theme="dark"] .restaurant-section {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+}
+
+/* ---------- NAVBAR ---------- */
+html[data-theme="dark"] .navbar {
+    background: var(--navbar-bg);
+    border-bottom-color: var(--border-color);
+    box-shadow: 0 5px 24px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .nav-links > a,
+html[data-theme="dark"] .profile-dropdown a {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .nav-links > a:hover,
+html[data-theme="dark"] .profile-dropdown a:hover {
+    color: var(--tomato);
+}
+
+html[data-theme="dark"] .profile-dropdown {
+    background: var(--surface);
+    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+
+html[data-theme="dark"] .profile-image {
+    background: var(--surface-soft);
+    border-color: var(--border-color);
+}
+
+/* ---------- HERO: KEEP THE EXISTING FOOD IMAGE ---------- */
+html[data-theme="dark"] .hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(15, 15, 14, 0.94) 0%,
+            rgba(15, 15, 14, 0.82) 45%,
+            rgba(15, 15, 14, 0.48) 100%
+        ),
+        url("https://images.pexels.com/photos/3756479/pexels-photo-3756479.jpeg");
+}
+
+html[data-theme="dark"] .hero h1,
+html[data-theme="dark"] .hero-left h1,
+html[data-theme="dark"] .hero-copy h1 {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .hero p {
+    color: #ded3ca;
+}
+
+html[data-theme="dark"] .small-label,
+html[data-theme="dark"] .hero-tags span {
+    background: rgba(32, 32, 31, 0.88);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* ---------- SEARCH ---------- */
+html[data-theme="dark"] .hero-search {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+
+html[data-theme="dark"] .hero-search input,
+html[data-theme="dark"] .hero-search input[type="search"] {
+    background: transparent;
+    color: var(--input-text);
+}
+
+html[data-theme="dark"] .hero-search input::placeholder,
+html[data-theme="dark"] .hero-search input[type="search"]::placeholder {
+    color: #aaa09a;
+}
+
+html[data-theme="dark"] .hero-search .clear-search {
+    background: var(--hover-bg);
+    color: var(--tomato);
+}
+
+html[data-theme="dark"] .hero-search .clear-search:hover {
+    background: #49302b;
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+html[data-theme="dark"] .section-heading,
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] .section-heading h3 {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .section-heading p,
+html[data-theme="dark"] .section-heading .description {
+    color: var(--text-secondary);
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+html[data-theme="dark"] .filter,
+html[data-theme="dark"] .filters button {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .filter:hover,
+html[data-theme="dark"] .filters button:hover,
+html[data-theme="dark"] .filter.active,
+html[data-theme="dark"] .filters button.active {
+    background: var(--hover-bg);
+    color: var(--tomato);
+    border-color: var(--tomato);
+}
+
+/* ---------- RESTAURANT CARDS ---------- */
+html[data-theme="dark"] .restaurant-card {
+    background: var(--surface);
+    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+
+html[data-theme="dark"] .restaurant-card:hover {
+    border-color: #51413a;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+}
+
+html[data-theme="dark"] .restaurant-card h3,
+html[data-theme="dark"] .restaurant-card h4,
+html[data-theme="dark"] .restaurant-title-row h3 {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .restaurant-card p,
+html[data-theme="dark"] .restaurant-card .cuisine,
+html[data-theme="dark"] .restaurant-card .restaurant-details,
+html[data-theme="dark"] .restaurant-card .delivery-time,
+html[data-theme="dark"] .restaurant-card .address {
+    color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .restaurant-details {
+    border-top-color: var(--border-color);
+}
+
+/* ---------- EMPTY RESULTS / MESSAGES ---------- */
+html[data-theme="dark"] .empty-results,
+html[data-theme="dark"] .no-results,
+html[data-theme="dark"] .empty-state,
+html[data-theme="dark"] .bottom-message {
+    background: var(--surface);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .empty-results p,
+html[data-theme="dark"] .no-results p,
+html[data-theme="dark"] .empty-state p,
+html[data-theme="dark"] .bottom-message p {
+    color: var(--text-secondary);
+}
+
+/* ---------- FOOTER ---------- */
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .footer {
+    background: #101010;
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+html[data-theme="dark"] footer p,
+html[data-theme="dark"] footer a,
+html[data-theme="dark"] .footer p,
+html[data-theme="dark"] .footer a {
+    color: var(--text-secondary);
+}
+
+/* ---------- COMMON FORM ELEMENTS ---------- */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #aaa09a;
+}
+
+html[data-theme="dark"] option {
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+/* ---------- TRANSITIONS ---------- */
+html[data-theme="dark"] .restaurant-card,
+html[data-theme="dark"] .filter,
+html[data-theme="dark"] .hero-search,
+html[data-theme="dark"] .profile-dropdown,
+html[data-theme="dark"] .navbar {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html[data-theme] body,
+    html[data-theme] .navbar,
+    html[data-theme] .restaurant-card {
+        transition: none;
+    }
+}
+
+
+
+/* =========================================================
+   TOMATO — FINAL DARK MODE FIX
+   Add at the VERY END of restaurant.css
+   Preserves existing layout, food imagery and animations.
+========================================================= */
+
+/* ---------- DARK PAGE SURFACES ---------- */
+
+html[data-theme="dark"] body {
+    background: var(--page-bg);
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .restaurants-section {
+    background: var(--page-bg);
+}
+
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] .restaurant-title-row h3,
+html[data-theme="dark"] .empty-message h3,
+html[data-theme="dark"] .no-results h3,
+html[data-theme="dark"] .bottom-message h2 {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .section-heading p,
+html[data-theme="dark"] .cuisine,
+html[data-theme="dark"] .restaurant-details,
+html[data-theme="dark"] .empty-message p,
+html[data-theme="dark"] .no-results p,
+html[data-theme="dark"] .bottom-message p {
+    color: var(--text-secondary);
+}
+
+/* ---------- FILTERS ---------- */
+
+html[data-theme="dark"] .filter {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .filter:hover {
+    background: var(--hover-bg);
+    color: var(--tomato);
+    border-color: var(--tomato);
+}
+
+html[data-theme="dark"] .filter.active {
+    background: var(--tomato);
+    color: #ffffff;
+    border-color: var(--tomato);
+}
+
+/* ---------- RESTAURANT CARDS ---------- */
+
+html[data-theme="dark"] .restaurant-card {
+    background: var(--surface);
+    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+
+html[data-theme="dark"] .restaurant-card:hover {
+    border-color: #66504a;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .restaurant-details {
+    border-top-color: var(--border-color);
+}
+
+html[data-theme="dark"] .restaurant-image {
+    background: #292522;
+}
+
+/* Keep the rating badge readable over food images */
+html[data-theme="dark"] .rating {
+    background: rgba(32, 32, 31, 0.96);
+    color: #a5e49a;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- EMPTY STATES ---------- */
+
+html[data-theme="dark"] .empty-message,
+html[data-theme="dark"] .no-results {
+    background: var(--surface-soft);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .reset-filters {
+    background: var(--tomato);
+    color: #ffffff;
+}
+
+/* ---------- BOTTOM MESSAGE ---------- */
+
+html[data-theme="dark"] .bottom-message {
+    background: linear-gradient(
+        125deg,
+        #29201e 0%,
+        #20201f 60%,
+        #1c281a 100%
+    );
+    color: var(--text-primary);
+}
+
+/* ---------- TOMATO ROPE MESSAGE ---------- */
+
+html[data-theme="dark"] .rope-tomato-message {
+    background: #252321;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- PROFILE DROPDOWN ---------- */
+
+html[data-theme="dark"] .profile-dropdown {
+    background: var(--surface);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .profile-dropdown a {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .profile-dropdown a:hover {
+    background: var(--hover-bg);
+    color: var(--tomato);
+}
+
+html[data-theme="dark"] .profile-dropdown .logout {
+    border-top-color: var(--border-color);
+    color: var(--tomato);
+}
+
+/* ---------- SEARCH INPUT ---------- */
+
+html[data-theme="dark"] .hero-search {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .hero-search input[type="search"] {
+    color: var(--input-text);
+}
+
+html[data-theme="dark"] .hero-search .clear-search {
+    background: var(--hover-bg);
+    color: var(--tomato);
+}
+
+/* ---------- THEME TRANSITIONS ---------- */
+
+body,
+.navbar,
+.restaurant-card,
+.filter,
+.hero-search,
+.profile-dropdown,
+.bottom-message {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .navbar,
+    .restaurant-card,
+    .filter,
+    .hero-search,
+    .profile-dropdown,
+    .bottom-message {
+        transition: none !important;
+    }
+}
+
+
+
+

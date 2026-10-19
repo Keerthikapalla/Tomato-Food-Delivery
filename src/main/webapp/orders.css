@@ -1,0 +1,2116 @@
+/* =========================================================
+   TOMATO ORDERS PAGE
+   Animated & Playful Design
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff8f4;
+    color: #2d2d2d;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #e63946;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e63946;
+}
+
+.nav-links a.active {
+    color: #e63946;
+}
+
+.profile-image {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0ec;
+
+    font-size: 20px !important;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   FLOATING TOMATOES
+   ========================================================= */
+
+.floating-tomato {
+    position: fixed;
+
+    font-size: 28px;
+
+    opacity: 0.14;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatTomato 5s ease-in-out infinite;
+}
+
+.tomato-one {
+    top: 130px;
+    left: 3%;
+}
+
+.tomato-two {
+    top: 350px;
+    right: 3%;
+    animation-delay: 1s;
+}
+
+.tomato-three {
+    top: 680px;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.tomato-four {
+    top: 850px;
+    right: 7%;
+    animation-delay: 3s;
+}
+
+@keyframes floatTomato {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.orders-page {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.orders-hero {
+    width: 86%;
+    max-width: 1180px;
+
+    margin: 42px auto 28px;
+
+    min-height: 230px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 40px 55px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff0eb,
+        #fff9f5
+    );
+
+    border: 1px solid #ffe0d8;
+
+    box-shadow:
+        0 15px 40px rgba(210, 70, 45, 0.08);
+
+    animation: heroAppear 0.7s ease;
+}
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-tomato {
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 68px;
+
+    box-shadow:
+        0 15px 35px rgba(220, 65, 45, 0.13);
+
+    animation: tomatoBounce 3s ease-in-out infinite;
+
+    flex-shrink: 0;
+}
+
+@keyframes tomatoBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+.hero-content {
+    margin-left: 32px;
+}
+
+.hero-small {
+    display: inline-block;
+
+    color: #e63946;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: 800;
+
+    color: #252525;
+
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    display: inline-block;
+
+    font-size: 28px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.hero-content p {
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.hero-decoration {
+    position: absolute;
+
+    right: 45px;
+    top: 35px;
+
+    font-size: 35px;
+
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.3) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ORDERS CONTAINER
+   ========================================================= */
+
+.orders-container {
+    width: 86%;
+    max-width: 1050px;
+
+    margin: 0 auto 60px;
+}
+
+
+/* =========================================================
+   TOP SECTION
+   ========================================================= */
+
+.orders-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.section-label {
+    color: #e63946;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.orders-top h2 {
+    margin-top: 3px;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.order-count {
+    min-width: 85px;
+
+    padding: 10px 17px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    border: 1px solid #ffe0d8;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.order-count span {
+    color: #e63946;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    margin-right: 4px;
+}
+
+.order-count small {
+    color: #777;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ORDER CARD
+   ========================================================= */
+
+.order-card {
+    background: white;
+
+    border-radius: 25px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #f2e4df;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+
+    animation:
+        cardAppear 0.65s ease both;
+
+    animation-delay: var(--card-delay);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 45px rgba(210, 70, 45, 0.12);
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.order-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 23px 26px 18px;
+
+    border-bottom: 1px solid #f5eeee;
+}
+
+.order-number {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.order-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1ec;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+.order-number span {
+    color: #999;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.order-number h3 {
+    font-size: 19px;
+    font-weight: 800;
+
+    color: #282828;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+.status-badge.placed {
+    background: #fff3d8;
+    color: #b47700;
+}
+
+.status-badge.placed .status-dot {
+    background: #e6a400;
+}
+
+.status-badge.preparing {
+    background: #fff0df;
+    color: #d66b00;
+}
+
+.status-badge.preparing .status-dot {
+    background: #ff8a00;
+    animation: pulse 1.2s infinite;
+}
+
+.status-badge.on-the-way,
+.status-badge.onway {
+    background: #eaf5ff;
+    color: #1773b7;
+}
+
+.status-badge.on-the-way .status-dot,
+.status-badge.onway .status-dot {
+    background: #2196d2;
+    animation: pulse 1.2s infinite;
+}
+
+.status-badge.delivered {
+    background: #e9f8ed;
+    color: #278443;
+}
+
+.status-badge.delivered .status-dot {
+    background: #39a85a;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 70, 50, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(230, 70, 50, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 70, 50, 0);
+    }
+}
+
+
+/* =========================================================
+   ORDER META
+   ========================================================= */
+
+.order-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 20px 26px;
+
+    background: #fffafa;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.meta-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+}
+
+.meta-item small {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.meta-item strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #444;
+}
+
+.total-meta strong {
+    color: #e63946;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DELIVERY JOURNEY
+   ========================================================= */
+
+.delivery-journey {
+    padding: 24px 26px 26px;
+
+    border-bottom: 1px solid #f3eeee;
+}
+
+.journey-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #444;
+
+    margin-bottom: 24px;
+}
+
+.timeline {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+
+    left: 12.5%;
+    right: 12.5%;
+
+    top: 18px;
+
+    height: 3px;
+
+    background: #eee;
+
+    z-index: 0;
+}
+
+.timeline-step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 1;
+
+    color: #aaa;
+}
+
+.timeline-circle {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f1f1;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+
+    border: 3px solid white;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.timeline-step span {
+    margin-top: 8px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.timeline-step.active {
+    color: #e63946;
+}
+
+.timeline-step.active .timeline-circle {
+    background: #e63946;
+
+    color: white;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 15px rgba(230, 57, 70, 0.25);
+}
+
+.timeline-step.active:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 17px;
+    left: 50%;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: #e63946;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   ITEMS
+   ========================================================= */
+
+.items-section {
+    padding: 24px 26px 5px;
+}
+
+.items-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.items-heading h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.items-heading span {
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px dashed #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-image-wrapper {
+    width: 72px;
+    height: 72px;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.item-image {
+    width: 72px;
+    height: 72px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+.order-item:hover .item-image {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.quantity-bubble {
+    position: absolute;
+
+    right: -7px;
+    bottom: -5px;
+
+    min-width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    background: #e63946;
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    border: 2px solid white;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h5 {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #292929;
+}
+
+.item-details p {
+    margin-top: 3px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    max-width: 600px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-price {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.item-total {
+    min-width: 75px;
+
+    text-align: right;
+
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.order-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 26px 22px;
+
+    margin-top: 5px;
+
+    background: #fffdfc;
+}
+
+.thank-you {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.thank-you > span {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0eb;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+.thank-you strong {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: #555;
+}
+
+.thank-you small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #aaa;
+
+    font-size: 8px;
+}
+
+.order-again-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    background: #e63946;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(230, 57, 70, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.order-again-btn:hover {
+    background: #d62839;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(230, 57, 70, 0.28);
+}
+
+
+/* =========================================================
+   EMPTY ORDERS
+   ========================================================= */
+
+.empty-orders {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 65px 30px;
+
+    text-align: center;
+
+    border: 1px solid #f1e4df;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.05);
+
+    animation: cardAppear 0.7s ease;
+}
+
+.empty-animation {
+    height: 110px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-tomato {
+    font-size: 72px;
+
+    animation: tomatoBounce 2s infinite;
+}
+
+.empty-plate {
+    position: absolute;
+
+    font-size: 28px;
+
+    transform: translate(50px, 28px);
+
+    animation: plateFloat 2s ease-in-out infinite;
+}
+
+@keyframes plateFloat {
+
+    0%,
+    100% {
+        transform: translate(50px, 28px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(50px, 20px) rotate(5deg);
+    }
+}
+
+.empty-orders h2 {
+    margin-top: 15px;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.empty-orders p {
+    margin-top: 7px;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+.order-food-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 22px;
+
+    padding: 12px 23px;
+
+    border-radius: 13px;
+
+    background: #e63946;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 6px 18px rgba(230, 57, 70, 0.22);
+}
+
+.order-food-btn:hover {
+    transform: translateY(-3px);
+
+    background: #d62839;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    margin-top: 70px;
+
+    padding: 40px 20px 35px;
+
+    text-align: center;
+
+    background: #252525;
+
+    color: white;
+}
+
+.footer-tomato {
+    font-size: 30px;
+
+    animation: tomatoBounce 3s infinite;
+}
+
+.footer h3 {
+    margin-top: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.footer p {
+    margin-top: 5px;
+
+    color: #bbb;
+
+    font-size: 11px;
+}
+
+.footer > span {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .orders-hero {
+        width: 92%;
+        padding: 35px;
+    }
+
+    .orders-container {
+        width: 92%;
+    }
+
+    .hero-tomato {
+        width: 100px;
+        height: 100px;
+
+        font-size: 55px;
+    }
+
+    .hero-content {
+        margin-left: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .order-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 65px;
+    }
+
+    .logo a {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .profile-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .orders-hero {
+        width: 94%;
+
+        min-height: auto;
+
+        padding: 28px 22px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 18px 0 0;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+    }
+
+    .hero-decoration {
+        right: 20px;
+        top: 18px;
+    }
+
+    .orders-container {
+        width: 94%;
+    }
+
+    .orders-top h2 {
+        font-size: 21px;
+    }
+
+    .order-count {
+        min-width: 70px;
+        padding: 8px 10px;
+    }
+
+    .order-card-top {
+        padding: 18px;
+    }
+
+    .order-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 21px;
+    }
+
+    .order-number h3 {
+        font-size: 16px;
+    }
+
+    .status-badge {
+        padding: 6px 9px;
+
+        font-size: 8px;
+    }
+
+    .order-meta {
+        padding: 16px 18px;
+
+        gap: 14px;
+    }
+
+    .meta-icon {
+        width: 30px;
+        height: 30px;
+
+        font-size: 14px;
+    }
+
+    .meta-item strong {
+        font-size: 9px;
+    }
+
+    .delivery-journey {
+        padding: 20px 15px;
+    }
+
+    .timeline-step span {
+        font-size: 8px;
+    }
+
+    .timeline-circle {
+        width: 32px;
+        height: 32px;
+
+        font-size: 11px;
+    }
+
+    .timeline-line {
+        top: 15px;
+    }
+
+    .timeline-step.active:not(:last-child)::after {
+        top: 14px;
+    }
+
+    .items-section {
+        padding: 20px 18px 5px;
+    }
+
+    .order-item {
+        gap: 11px;
+    }
+
+    .item-image-wrapper,
+    .item-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .item-details h5 {
+        font-size: 11px;
+    }
+
+    .item-details p {
+        max-width: 180px;
+
+        font-size: 8px;
+    }
+
+    .item-total {
+        min-width: 55px;
+
+        font-size: 10px;
+    }
+
+    .order-card-footer {
+        padding: 17px 18px 20px;
+
+        gap: 10px;
+    }
+
+    .thank-you strong {
+        font-size: 8px;
+    }
+
+    .thank-you small {
+        font-size: 7px;
+    }
+
+    .order-again-btn {
+        padding: 9px 12px;
+
+        font-size: 8px;
+    }
+
+    .empty-orders {
+        padding: 50px 20px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .nav-links a:not(.profile-image) {
+        font-size: 9px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .order-meta {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .order-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .order-again-btn {
+        width: 100%;
+    }
+
+    .thank-you {
+        justify-content: center;
+    }
+
+    .item-details p {
+        max-width: 130px;
+    }
+
+
+
+
+
+
+/* =========================================================
+   TOMATO ORDERS — COMPLETE DARK THEME
+   Matches the shared Restaurant, Menu and Cart theme toggle
+========================================================= */
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --orders-page: #171514;
+    --orders-surface: #24211f;
+    --orders-surface-alt: #1d1a19;
+    --orders-text: #f7eee7;
+    --orders-muted: #c0b2a8;
+    --orders-border: #403833;
+}
+
+/* ---------------------------------------------------------
+   PAGE BACKGROUND AND DEFAULT TEXT
+--------------------------------------------------------- */
+
+html[data-theme="dark"] body {
+    background: var(--orders-page) !important;
+    color: var(--orders-text) !important;
+}
+
+html[data-theme="dark"] .orders-page {
+    background: transparent !important;
+    color: var(--orders-text) !important;
+}
+
+/* ---------------------------------------------------------
+   NAVBAR
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .navbar {
+    background: #211e1c !important;
+    color: var(--orders-text) !important;
+    border-bottom: 1px solid var(--orders-border) !important;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .25) !important;
+}
+
+html[data-theme="dark"] .nav-links a {
+    color: #e5d9d0 !important;
+}
+
+html[data-theme="dark"] .nav-links a:hover,
+html[data-theme="dark"] .nav-links a.active {
+    color: #ff655b !important;
+}
+
+html[data-theme="dark"] .logo a {
+    color: #ff5b52 !important;
+}
+
+html[data-theme="dark"] .profile-image {
+    background: #3a2926 !important;
+    color: #fff0e9 !important;
+}
+
+/* ---------------------------------------------------------
+   FLOATING TOMATOES
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .floating-tomato {
+    opacity: .20;
+    filter: none;
+}
+
+/* ---------------------------------------------------------
+   HERO SECTION
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .orders-hero {
+    background: linear-gradient(
+        135deg,
+        #30221f 0%,
+        #24201e 55%,
+        #20251f 100%
+    ) !important;
+
+    border: 1px solid #49332d !important;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .25) !important;
+}
+
+html[data-theme="dark"] .hero-tomato {
+    background: #302522 !important;
+    color: #fff0e9 !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .28) !important;
+}
+
+html[data-theme="dark"] .hero-content h1 {
+    color: #fff4ec !important;
+}
+
+html[data-theme="dark"] .hero-content p {
+    color: #c8b9af !important;
+}
+
+html[data-theme="dark"] .hero-small {
+    color: #ff7167 !important;
+}
+
+html[data-theme="dark"] .hero-decoration {
+    color: #ffb36c;
+}
+
+/* ---------------------------------------------------------
+   ORDERS HEADING AND ORDER COUNT
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .orders-top h2 {
+    color: var(--orders-text) !important;
+}
+
+html[data-theme="dark"] .section-label {
+    color: #ff7167 !important;
+}
+
+html[data-theme="dark"] .order-count {
+    background: var(--orders-surface) !important;
+    color: var(--orders-text) !important;
+    border-color: var(--orders-border) !important;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .20) !important;
+}
+
+html[data-theme="dark"] .order-count span {
+    color: #ff7167 !important;
+}
+
+html[data-theme="dark"] .order-count small {
+    color: var(--orders-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   ORDER CARDS
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .order-card {
+    background: var(--orders-surface) !important;
+    color: var(--orders-text) !important;
+    border: 1px solid var(--orders-border) !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .25) !important;
+}
+
+html[data-theme="dark"] .order-card:hover {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .38) !important;
+}
+
+/* ---------------------------------------------------------
+   ORDER CARD HEADER
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .order-card-top {
+    background: var(--orders-surface) !important;
+    border-bottom-color: var(--orders-border) !important;
+}
+
+html[data-theme="dark"] .order-icon {
+    background: #3a2926 !important;
+    color: #fff0e9 !important;
+}
+
+html[data-theme="dark"] .order-number span {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .order-number h3 {
+    color: var(--orders-text) !important;
+}
+
+/* ---------------------------------------------------------
+   ORDER STATUS BADGES
+   Keep status colors distinct and readable
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .status-badge.placed {
+    background: #44371e !important;
+    color: #ffdc8a !important;
+}
+
+html[data-theme="dark"] .status-badge.placed .status-dot {
+    background: #f4c14f !important;
+}
+
+html[data-theme="dark"] .status-badge.preparing {
+    background: #462d1c !important;
+    color: #ffc18a !important;
+}
+
+html[data-theme="dark"] .status-badge.preparing .status-dot {
+    background: #ff9a3c !important;
+}
+
+html[data-theme="dark"] .status-badge.on-the-way,
+html[data-theme="dark"] .status-badge.onway {
+    background: #1e3445 !important;
+    color: #a9dfff !important;
+}
+
+html[data-theme="dark"] .status-badge.on-the-way .status-dot,
+html[data-theme="dark"] .status-badge.onway .status-dot {
+    background: #59b9f0 !important;
+}
+
+html[data-theme="dark"] .status-badge.delivered {
+    background: #213b29 !important;
+    color: #a9e7b5 !important;
+}
+
+html[data-theme="dark"] .status-badge.delivered .status-dot {
+    background: #66cf81 !important;
+}
+
+/* ---------------------------------------------------------
+   ORDER META INFORMATION
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .order-meta {
+    background: #1d1a19 !important;
+    border-color: var(--orders-border) !important;
+}
+
+html[data-theme="dark"] .meta-icon {
+    background: #302a26 !important;
+    color: #f7eee7 !important;
+}
+
+html[data-theme="dark"] .meta-item small {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .meta-item strong {
+    color: #f7eee7 !important;
+}
+
+html[data-theme="dark"] .total-meta strong {
+    color: #ff7167 !important;
+}
+
+/* ---------------------------------------------------------
+   DELIVERY TIMELINE
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .delivery-journey {
+    background: var(--orders-surface) !important;
+    border-bottom-color: var(--orders-border) !important;
+}
+
+html[data-theme="dark"] .journey-title {
+    color: var(--orders-text) !important;
+}
+
+html[data-theme="dark"] .timeline-line {
+    background: #48413c !important;
+}
+
+html[data-theme="dark"] .timeline-step {
+    color: #b6aaa1 !important;
+}
+
+html[data-theme="dark"] .timeline-circle {
+    background: #38322e !important;
+    color: #e7dcd3 !important;
+    border-color: var(--orders-surface) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .30) !important;
+}
+
+html[data-theme="dark"] .timeline-step.active {
+    color: #ff8178 !important;
+}
+
+html[data-theme="dark"] .timeline-step.active .timeline-circle {
+    background: #e63946 !important;
+    color: #ffffff !important;
+    border-color: var(--orders-surface) !important;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, .25) !important;
+}
+
+html[data-theme="dark"] .timeline-step.active:not(:last-child)::after {
+    background: #e63946 !important;
+}
+
+/* ---------------------------------------------------------
+   ORDERED ITEMS SECTION
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .items-section {
+    background: var(--orders-surface) !important;
+    color: var(--orders-text) !important;
+}
+
+html[data-theme="dark"] .items-heading h4 {
+    color: var(--orders-text) !important;
+}
+
+html[data-theme="dark"] .items-heading span {
+    color: var(--orders-muted) !important;
+}
+
+html[data-theme="dark"] .order-items {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .order-item {
+    background: transparent !important;
+    border-bottom-color: #403833 !important;
+}
+
+/* Preserve food photography: do not darken actual images */
+html[data-theme="dark"] .item-image-wrapper {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .item-image {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html[data-theme="dark"] .quantity-bubble {
+    background: #e63946 !important;
+    color: #ffffff !important;
+    border-color: var(--orders-surface) !important;
+}
+
+html[data-theme="dark"] .item-details h5 {
+    color: #fff4ec !important;
+}
+
+html[data-theme="dark"] .item-details p {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .item-price {
+    color: #cbbdb3 !important;
+}
+
+html[data-theme="dark"] .item-total {
+    color: #f7eee7 !important;
+}
+
+/* ---------------------------------------------------------
+   ORDER CARD FOOTER
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .order-card-footer {
+    background: #1d1a19 !important;
+    color: var(--orders-text) !important;
+    border-top-color: var(--orders-border) !important;
+}
+
+html[data-theme="dark"] .thank-you > span {
+    background: #3a2926 !important;
+    color: #fff0e9 !important;
+}
+
+html[data-theme="dark"] .thank-you strong {
+    color: #f7eee7 !important;
+}
+
+html[data-theme="dark"] .thank-you small {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .order-again-btn,
+html[data-theme="dark"] .order-food-btn {
+    background: #e63946 !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .order-again-btn:hover,
+html[data-theme="dark"] .order-food-btn:hover {
+    background: #c92837 !important;
+    color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   EMPTY ORDERS STATE
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .empty-orders {
+    background: var(--orders-surface) !important;
+    color: var(--orders-text) !important;
+    border-color: var(--orders-border) !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .25) !important;
+}
+
+html[data-theme="dark"] .empty-orders h2 {
+    color: #fff4ec !important;
+}
+
+html[data-theme="dark"] .empty-orders p {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .empty-tomato,
+html[data-theme="dark"] .empty-plate {
+    filter: none !important;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .footer {
+    background: #11100f !important;
+    color: #f7eee7 !important;
+    border-top: 1px solid #302a26 !important;
+}
+
+html[data-theme="dark"] .footer h3 {
+    color: #fff4ec !important;
+}
+
+html[data-theme="dark"] .footer p {
+    color: #c0b2a8 !important;
+}
+
+html[data-theme="dark"] .footer > span {
+    color: #a99b91 !important;
+}
+
+/* ---------------------------------------------------------
+   LINKS AND ACCESSIBILITY
+--------------------------------------------------------- */
+
+html[data-theme="dark"] .orders-page a:focus-visible,
+html[data-theme="dark"] .navbar a:focus-visible {
+    outline: 2px solid #ff7167 !important;
+    outline-offset: 3px;
+}
+
+/* Ensure nested text does not inherit accidental dark text */
+html[data-theme="dark"] .order-card,
+html[data-theme="dark"] .order-card-top,
+html[data-theme="dark"] .order-meta,
+html[data-theme="dark"] .delivery-journey,
+html[data-theme="dark"] .items-section,
+html[data-theme="dark"] .order-card-footer,
+html[data-theme="dark"] .empty-orders {
+    color: var(--orders-text);
+}
+
+/* Smooth theme changes without altering the existing animations */
+html[data-theme="dark"] .order-card,
+html[data-theme="dark"] .orders-hero,
+html[data-theme="dark"] .order-count,
+html[data-theme="dark"] .order-card-footer,
+html[data-theme="dark"] .empty-orders,
+html[data-theme="dark"] .meta-icon,
+html[data-theme="dark"] .timeline-circle {
+    transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+}
+
+
+
+
+
+/* =====================================================
+   TOMATO ORDERS PAGE — COMPLETE DARK MODE FIX
+   Keep this block at the VERY END of orders.css
+===================================================== */
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+    background: #101114 !important;
+    color: #f3f4f6 !important;
+    color-scheme: dark;
+}
+
+/* Main page and all major sections */
+html[data-theme="dark"] .orders-page,
+html[data-theme="dark"] .orders-container,
+html[data-theme="dark"] main,
+html[data-theme="dark"] section {
+    background-color: transparent !important;
+    color: #f3f4f6 !important;
+}
+
+/* Navbar */
+html[data-theme="dark"] .navbar {
+    background: #18191e !important;
+    color: #f3f4f6 !important;
+    border-bottom: 1px solid #303139 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .navbar a,
+html[data-theme="dark"] .nav-links a,
+html[data-theme="dark"] .logo a {
+    color: #f3f4f6 !important;
+}
+
+/* Hero banner */
+html[data-theme="dark"] .orders-hero {
+    background: linear-gradient(135deg, #24191b, #19241e) !important;
+    color: #ffffff !important;
+    border-color: #393238 !important;
+}
+
+html[data-theme="dark"] .orders-hero *,
+html[data-theme="dark"] .hero-content,
+html[data-theme="dark"] .hero-content h1,
+html[data-theme="dark"] .hero-content p,
+html[data-theme="dark"] .hero-small {
+    color: #f5f5f5 !important;
+}
+
+/* Order cards and panels */
+html[data-theme="dark"] .order-card,
+html[data-theme="dark"] .delivery-journey,
+html[data-theme="dark"] .items-section,
+html[data-theme="dark"] .order-card-top,
+html[data-theme="dark"] .order-card-footer {
+    background: #1c1d23 !important;
+    color: #f3f4f6 !important;
+    border-color: #363740 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Headings and general text */
+html[data-theme="dark"] .orders-page h1,
+html[data-theme="dark"] .orders-page h2,
+html[data-theme="dark"] .orders-page h3,
+html[data-theme="dark"] .orders-page h4,
+html[data-theme="dark"] .orders-page p,
+html[data-theme="dark"] .orders-page span,
+html[data-theme="dark"] .orders-page label,
+html[data-theme="dark"] .orders-page strong,
+html[data-theme="dark"] .orders-page small,
+html[data-theme="dark"] .order-number,
+html[data-theme="dark"] .items-heading,
+html[data-theme="dark"] .journey-title,
+html[data-theme="dark"] .thank-you,
+html[data-theme="dark"] .section-label,
+html[data-theme="dark"] .meta-item,
+html[data-theme="dark"] .item-details,
+html[data-theme="dark"] .item-price,
+html[data-theme="dark"] .item-total {
+    color: #e8e9ed !important;
+}
+
+/* Secondary text */
+html[data-theme="dark"] .order-meta,
+html[data-theme="dark"] .meta-item,
+html[data-theme="dark"] .hero-small {
+    color: #b8bbc5 !important;
+}
+
+/* Order items */
+html[data-theme="dark"] .order-items,
+html[data-theme="dark"] .order-item,
+html[data-theme="dark"] .item-image-wrapper {
+    background: #22232a !important;
+    color: #f3f4f6 !important;
+    border-color: #383943 !important;
+}
+
+/* Keep food photos natural and visible */
+html[data-theme="dark"] .item-image {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Timeline */
+html[data-theme="dark"] .timeline {
+    color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .timeline-line {
+    background: #454650 !important;
+}
+
+html[data-theme="dark"] .timeline-circle {
+    background: #292a31 !important;
+    color: #f3f4f6 !important;
+    border-color: #62636e !important;
+}
+
+/* Status badges: retain meaningful status colors */
+html[data-theme="dark"] .status-badge {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .status-badge.placed {
+    background: #393047 !important;
+}
+
+html[data-theme="dark"] .status-badge.preparing {
+    background: #49391f !important;
+}
+
+html[data-theme="dark"] .status-badge.on-the-way,
+html[data-theme="dark"] .status-badge.onway {
+    background: #183d50 !important;
+}
+
+html[data-theme="dark"] .status-badge.delivered {
+    background: #1d4934 !important;
+}
+
+/* Empty orders state */
+html[data-theme="dark"] .empty-orders,
+html[data-theme="dark"] .empty-animation,
+html[data-theme="dark"] .empty-plate {
+    background: #1c1d23 !important;
+    color: #f3f4f6 !important;
+    border-color: #363740 !important;
+}
+
+html[data-theme="dark"] .empty-orders h2,
+html[data-theme="dark"] .empty-orders p {
+    color: #e8e9ed !important;
+}
+
+/* Buttons */
+html[data-theme="dark"] .order-again-btn,
+html[data-theme="dark"] .order-food-btn {
+    color: #ffffff !important;
+}
+
+/* Footer */
+html[data-theme="dark"] .footer {
+    background: #18191e !important;
+    color: #d7d8de !important;
+    border-top: 1px solid #303139 !important;
+}
+
+html[data-theme="dark"] .footer * {
+    color: #d7d8de !important;
+}
+
+/* Prevent white form controls */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: #22232a !important;
+    color: #f3f4f6 !important;
+    border-color: #454650 !important;
+}
+
+html[data-theme="dark"] input::placeholder {
+    color: #a5a7b0 !important;
+}
+
+
+
+/* Fix dark mode for order date, payment, items and total */
+html[data-theme="dark"] .order-meta,
+html[data-theme="dark"] .meta-item,
+html[data-theme="dark"] .total-meta {
+    background: #22232a !important;
+    color: #f3f4f6 !important;
+    border-color: #393a44 !important;
+}
+
+html[data-theme="dark"] .meta-item *,
+html[data-theme="dark"] .total-meta * {
+    color: #e8e9ed !important;
+}
+
+html[data-theme="dark"] .meta-icon {
+    background: #30313a !important;
+    color: #ff786b !important;
+}
+
+html[data-theme="dark"] .meta-item strong,
+html[data-theme="dark"] .meta-item b,
+html[data-theme="dark"] .total-meta strong,
+html[data-theme="dark"] .total-meta b {
+    color: #ffffff !important;
+}
